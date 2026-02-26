@@ -16,6 +16,12 @@ async function getClient() {
   }
   if (process.env.PGPORT) config.port = parseInt(process.env.PGPORT, 10);
   if (process.env.PGPASSWORD) config.password = process.env.PGPASSWORD;
+  if (process.env.PGSSLMODE === 'require' || process.env.NODE_ENV === 'production') {
+    config.ssl = {
+      require: true,
+      rejectUnauthorized: false,
+    };
+  }
   const client = new Client(config);
   await client.connect();
   return client;
