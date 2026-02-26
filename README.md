@@ -2,9 +2,14 @@
 
 A production-style event booking application built with Next.js, PostgreSQL, and Sequelize.
 
+## Scope and Delivery Notes
+- I focused primarily on user flow correctness and technology stack decisions.
+- I spent additional effort on build hardening to make deployment behavior predictable across environments.
+- AI was used to verify implementation coverage by comparing completed work against requirements, then to draft the base `README.md` and `docs-*` files.
+
 ## Live Links
-- Live demo: https://event-booking-demo.vercel.app
-- Loom walkthrough (3-5 min): https://loom.com/share/your-loom-id
+- Live demo: https://event-booking-snowy-two.vercel.app
+- Loom walkthrough (3-5 min): https://github.com/whygwn/event-booking/blob/main/Kooha-2026-02-27-02-17-42.webm
 
 ## Tech Choices
 - Next.js App Router for a single frontend + API codebase with fast iteration.
