@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 const { Client } = require('pg');
 const bcrypt = require('bcryptjs');
+const fs = require('fs');
+const path = require('path');
 
 async function getClient() {
   const config = {
@@ -50,6 +52,15 @@ async function seed() {
   const client = await getClient();
   try {
     console.log('Starting seed...');
+
+    const usersTableCheck = await client.query("SELECT to_regclass('public.users') AS users_table");
+    if (!usersTableCheck.rows[0]?.users_table) {
+      console.log('Schema not found. Applying core schema...');
+      const schemaPath = path.join(__dirname, '..', 'whyplan-core-schema.txt');
+      const schemaSql = fs.readFileSync(schemaPath, 'utf8');
+      await client.query(schemaSql);
+      console.log('Core schema applied.');
+    }
 
     // Ensure DB has required columns (backwards-compatible)
     console.log('Ensuring schema compatibility...');
