@@ -2,10 +2,10 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import BookingForm from './BookingForm';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Badge } from './ui/badge';
+import { Card, CardContent, CardHeader } from './ui/card';
 import { Clock, Users } from 'lucide-react';
-import { formatEventTime, getClientTimezone } from '@/lib/timezone';
+import { formatEventTime, getClientTimezone } from '../lib/timezone';
 
 type SlotBooking = {
   status: string;

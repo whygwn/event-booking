@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
 import { MapPin, Calendar, Sparkles, Waves } from 'lucide-react';
-import LocalDateText from '@/components/LocalDateText';
+import LocalDateText from '../components/LocalDateText';
  
 type EventItem = {
   id: number;

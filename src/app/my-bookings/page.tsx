@@ -3,12 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '../../components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
+import { Badge } from '../../components/ui/badge';
+import { Alert, AlertDescription } from '../../components/ui/alert';
 import { Loader2, Calendar, Clock, ExternalLink, LogOut, RotateCcw, Trash2, Waves } from 'lucide-react';
-import { formatEventDate, formatEventTime, getClientTimezone } from '@/lib/timezone';
+import { formatEventDate, formatEventTime, getClientTimezone } from '../../lib/timezone';
  
 export default function MyBookingsPage() {
   const [bookings, setBookings] = useState<any[]>([]);

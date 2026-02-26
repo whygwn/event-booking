@@ -2,11 +2,11 @@ import { Event, Slot, Booking } from '../../../models';
 import Link from 'next/link';
 import Image from 'next/image';
 import EventSlotsRealtime from '../../../components/EventSlotsRealtime';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '../../../components/ui/button';
+import { Badge } from '../../../components/ui/badge';
+import { Card, CardContent } from '../../../components/ui/card';
 import { ChevronLeft, Calendar, MapPin, Waves } from 'lucide-react';
-import LocalDateText from '@/components/LocalDateText';
+import LocalDateText from '../../../components/LocalDateText';
  
 export default async function EventDetail({ params }: { params: { id: string } }) {
   const id = Number(params.id);

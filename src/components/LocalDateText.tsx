@@ -1,6 +1,6 @@
 "use client";
 
-import { formatEventDate, formatEventTime, getClientTimezone } from '@/lib/timezone';
+import { formatEventDate, formatEventTime, getClientTimezone } from '../lib/timezone';
 
 export default function LocalDateText({
   date,
