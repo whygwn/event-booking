@@ -206,7 +206,7 @@ npx tsc --noEmit
 - `PUT /api/bookings/:id` (undo cancellation)
 - `GET /api/notifications`
 
-## What You'd Improve
+## What Improved?
 1. Replace localStorage JWT with secure cookie-based auth and refresh flow.
 2. Upgrade realtime updates from polling to WebSocket/SSE.
 3. Add Redis caching for event and slot reads.

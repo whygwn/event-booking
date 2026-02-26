@@ -1,6 +1,10 @@
 import { Sequelize } from 'sequelize';
 import * as pg from 'pg';
 
+const isSslRequired =
+  process.env.PGSSLMODE === 'require' ||
+  process.env.NODE_ENV === 'production';
+
 const sequelize = new Sequelize({
   dialect: 'postgres',
   dialectModule: pg,
@@ -10,6 +14,14 @@ const sequelize = new Sequelize({
   password: process.env.PGPASSWORD || undefined,
   database: process.env.PGDATABASE || 'whygwn_db',
   logging: false,
+  dialectOptions: isSslRequired
+    ? {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
+      }
+    : undefined,
   define: {
     underscored: true,
     timestamps: true,
